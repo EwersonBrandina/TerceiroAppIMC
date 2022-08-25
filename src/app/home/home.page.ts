@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +11,7 @@ export class HomePage {
   escolha : string
   saida : string
   saida2 : string
-
+  img : any = "assets/icon/favicon.png"
   constructor() {}
 
 
@@ -24,18 +23,35 @@ calcular(){
     if (Number(resultado) <= 19){
       this.saida = resultado.toString()
       this.saida2 = "Abaixo do Peso"
+      this.img = "assets/icon/favicon.png"
     }
     if (Number(resultado) > 19 && Number(resultado) < 27.3){
       this.saida = resultado.toString()
       this.saida2 = "Peso Ideal"
+      this.img = "assets/icon/favicon.png"
     }
     if (Number(resultado) > 27.3){
       this.saida = resultado.toString()
       this.saida2 = "Acima do Peso"
+      this.img = "assets/imagem_alerta.png"
     }
   }
   else{
-    this.saida = resultado.toString()
+    if (Number(resultado) <= 19){
+      this.saida = resultado.toString()
+      this.saida2 = "Abaixo do Peso"
+      this.img = "assets/icon/favicon.png"
+    }
+    if (Number(resultado) > 19 && Number(resultado) < 27.3){
+      this.saida = resultado.toString()
+      this.saida2 = "Peso Ideal"
+      this.img = "assets/icon/favicon.png"
+    }
+    if (Number(resultado) > 27.3){
+      this.saida = resultado.toString()
+      this.saida2 = "Acima do Peso"
+      this.img = "assets/imagem_alerta.png"
+    }
 
   }
 }
